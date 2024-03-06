@@ -22,8 +22,6 @@
       </div>
     </div>
   </div>
-
-
 </template>
 
 
@@ -40,13 +38,14 @@ async function submitFile(event) {
 
   const formData = new FormData();
   formData.append('file', file);
-
   try {
-    const response = await axios.post(`${process.env.VUE_APP_API_URL}/transcribe/`, formData, {
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const response = await axios.post(`${apiUrl}/transcribe/`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     });
+
     transcription.value = response.data.results[0];
   } catch (error) {
     console.error(error);
