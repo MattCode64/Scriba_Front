@@ -18,7 +18,7 @@
     <div>
       <input class="form-floating" type="file" id="formFile" @change="submitFile">
       <div>
-        <Transcripted v-if="transcription" :transcription="transcription" />
+        <Transcripted v-if="transcription" :transcription="transcription"/>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import {ref} from 'vue';
 import Transcripted from './components/Transcripted.vue';
 import axios from 'axios';
 
@@ -42,12 +42,12 @@ async function submitFile(event) {
   formData.append('file', file);
 
   try {
-    const response = await axios.post('http://localhost:8000/transcribe/', formData, {
+    const response = await axios.post(`${process.env.VUE_APP_API_URL}/transcribe/`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     });
-    transcription.value = response.data.results[0]; // Assumant que `results` est un tableau
+    transcription.value = response.data.results[0];
   } catch (error) {
     console.error(error);
   }
