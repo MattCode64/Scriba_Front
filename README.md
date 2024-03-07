@@ -1,29 +1,54 @@
-# scriba-front
+# SCRIBA
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
 
-## Recommended IDE Setup
+SCRIBA is a web application that transcribes audio files. It supports .mp3 files and provides the transcription results in a user-friendly interface.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Technologies Used
 
-## Customize configuration
+- Python
+- Whisper (OpenAI's Speech-to-Text API)
+- FastAPI
+- Vue.js
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Installation
 
-## Project Setup
+### Backend
 
-```sh
+1. Navigate to the backend directory.
+2. Install the required Python packages using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the FastAPI server:
+
+```bash
+uvicorn main:app --reload
+```
+
+### Frontend
+
+1. Navigate to the frontend directory.
+2. Install the required Node.js packages using npm:
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. Run the Vue.js server:
 
-```sh
-npm run dev
+```bash
+npm run serve
 ```
 
-### Compile and Minify for Production
+## Usage
 
-```sh
-npm run build
-```
+1. Open the web application in your browser.
+2. Upload an audio file.
+3. Wait for the transcription to complete.
+
+## Authors
+
+- [Matthieu F](https://www.linkedin.com/in/matthieu-freire/)
